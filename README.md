@@ -107,3 +107,24 @@ sudo chmod u+x lsd_slam.sh
 
 #### Everytime you want to change to run a different dataset, make sure the calibration file 'camera.cfg' is correctly selected.
 #### Refer link: https://github.com/tum-vision/lsd_slam#313-camera-calibration
+
+# Generating Comparison Plots
+
+A useful tool called `rpg_trajectory_evaluation` is included with this repository. This tool is useful for comparing estimated and ground truth trajectories for the purposes of plotting.
+
+## ORB_SLAM2
+
+After running ORB_SLAM2 it will save the estimated trajectory to a weird location on your computer. To copy it here, run the provided script
+```
+./get_most_recent_orbslam_trajectory.sh
+```
+
+To analyze it, move it into the dataset folder you just ran naming it `stamepd_traj_estimate.yaml`. Now, you can run the evaluation tool on that folder like so
+```
+python2 rpg_trajectory_evaluation/scripts/analyze_trajectory_single.py <dataset folder>
+```
+
+This will generate some analyses and plots in that dataset folder which you can view. Under the hood, this package is running some algorithms to fit the scale of the monocular SLAM trajectory to the ground-truth scale.
+
+## LSD_SLAM
+See the folder: `lsd_plotter` for instructions on extracting and comparing the data for lsd_slam
