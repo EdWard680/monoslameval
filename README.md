@@ -36,7 +36,7 @@ to the top of `include/System.h` in the ORB_SLAM2 directory.
 Note that lsd_slam depends on very outdated versions of Ubuntu and ROS, and can't really run on the same system as ORB_SLAM2.
 
 #### Installation
-##### ROS fuerte + Ubuntu 12.04
+##### 1. ROS fuerte + Ubuntu 12.04
 Install system dependencies:
 
     sudo apt-get install ros-fuerte-libg2o liblapack-dev libblas-dev freeglut3-dev libqglviewer-qt4-dev libsuitesparse-dev libx11-dev
@@ -47,7 +47,7 @@ Compile the two package by typing:
 
     rosmake lsd_slam
 
-##### ROS indigo + Ubuntu 14.04
+##### 2. ROS indigo + Ubuntu 14.04
 **Not using catkin, however fortunately old-fashioned CMake-builds are still possible with ROS indigo.**
 For this you need to create a rosbuild workspace (if you don't have one yet), using:
 
@@ -91,4 +91,16 @@ Note for ORB_SLAM2, for some reason the window doesn't resize properly. Just clo
 ```
 source ~/rosbuild_ws/setup.bash
 ```
-###
+#### Locate under the folder 'monoslameval'.
+
+#### Open the terminal and give the execution ability to the .sh file
+```
+sudo chmod u+x lsd_slam.sh
+```
+
+#### Run the following command to get all pre-programs running:
+```
+./lsd_slam.sh
+```
+
+#### Run the dataset using just set the 'algorithm:=external.launch'.
