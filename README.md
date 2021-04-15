@@ -71,6 +71,19 @@ Compile the two package by typing:
 
     rosmake lsd_slam
 
+BUG fixing (if error occurs):
+If the message like this shows when running command `rosmake lsd_slam`: 'ERROR [gendeps] 1 Finding dependencies for /home/`<yoursettings>`/rosbuild_ws/package_dir/lsd_slam/lsd_slam_viewer/cfg/LSDSLAMViewerParams.cfg', then one may fix the problem according to the following instructions:
+```
+(1) Open lsd_slam_viewer/cfg/LSDSLAMViewerParams.cfg：
+　　　　　　　　　Line 20: scaledDepthVarTH： delete the "'" of the words "point's" and "keyframe's";
+　　　　　　　　　Line 21: absDepthVarTH：delete the "'" of the word "point's";
+　　　　　　　　　Line 24: cutFirstNKf：delete the "'" of the word "keyframe's".
+(2) Open lsd_slam_core/cfg/LSDDebugParams.cfg：
+　　　　　　　　　Line 11: plotStereoImages： delete the "'" of the word "what's";
+　　　　　　　　　Line 12: plotTracking：delete the "'" of the word "what's";
+　　　　　　　　　Line 48: continuousPCOutput：delete the "'" of the word "Keyframe's".
+```
+
 ## Running the datasets with the algorithms
 
 We attempted to set up launch files that could run the datasets for both algorithms, however roslaunch inexplicably doesn't want to start the lsd_slam nodes on ROS indigo, so a separate shell script for starting up the lsd_slam stack using `rosrun` is included.
@@ -106,7 +119,7 @@ sudo chmod u+x lsd_slam.sh
 #### 5. Run the dataset by setting 'algorithm:=external.launch'
 
 #### Everytime you want to change to run a different dataset, make sure the calibration file 'camera.cfg' is correctly selected.
-#### Refer link: https://github.com/tum-vision/lsd_slam#313-camera-calibration
+#### Reference link: https://github.com/tum-vision/lsd_slam#313-camera-calibration
 
 # Generating Comparison Plots
 
