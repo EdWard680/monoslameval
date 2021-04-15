@@ -11,7 +11,7 @@ source ~/<yourworkspace>/devel/setup.bash
 ```
 ### Make sure everytime you use these two packages, source it in the new terminal, or you can run:
 ```
-echo "source ~/<yourworkspace>/setup.bash" >> ~/.bashrc
+echo "source ~/<yourworkspace>/devel/setup.bash" >> ~/.bashrc
 ```
 to add it to '.bashrc' for future running.
 
