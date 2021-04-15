@@ -1,3 +1,6 @@
 [submodule "ORB_SLAM2"]
 	path = ORB_SLAM2
 	url = ./ORB_SLAM2
+[submodule "lsd_slam"]
+	path = lsd_slam
+	url = ./lsd_slam/
