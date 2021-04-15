@@ -35,8 +35,8 @@ to the top of `include/System.h` in the ORB_SLAM2 directory.
 
 Note that lsd_slam depends on very outdated versions of Ubuntu and ROS, and can't really run on the same system as ORB_SLAM2.
 
-## Installation
-# ROS fuerte + Ubuntu 12.04
+#### Installation
+##### ROS fuerte + Ubuntu 12.04
 Install system dependencies:
 
     sudo apt-get install ros-fuerte-libg2o liblapack-dev libblas-dev freeglut3-dev libqglviewer-qt4-dev libsuitesparse-dev libx11-dev
@@ -47,7 +47,7 @@ Compile the two package by typing:
 
     rosmake lsd_slam
 
-# ROS indigo + Ubuntu 14.04
+##### ROS indigo + Ubuntu 14.04
 **Not using catkin, however fortunately old-fashioned CMake-builds are still possible with ROS indigo.**
 For this you need to create a rosbuild workspace (if you don't have one yet), using:
 
@@ -87,8 +87,8 @@ This will launch rqt_bag on the bag file. Right-click the camera topic (`/camera
 Note for ORB_SLAM2, for some reason the window doesn't resize properly. Just close the image viewer window on ORB_SLAM2 and it will re-open
 
 ### LSD-slam running instructions
-## Everytime you need to run LSD-slam with a new window, make sure you correctly:
+#### Everytime you need to run LSD-slam with a new window, make sure you correctly:
 ```
 source ~/rosbuild_ws/setup.bash
 ```
-##
+###
