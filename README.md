@@ -116,7 +116,7 @@ sudo chmod u+x lsd_slam.sh
 ./lsd_slam.sh
 ```
 
-#### 5. Run the dataset by setting 'algorithm:=external.launch'
+#### 5. Run the '.bag' type dataset by setting 'algorithm:=external.launch'
 
 #### Everytime you want to change to run a different dataset, make sure the calibration file 'camera.cfg' is correctly selected.
 #### Reference link: https://github.com/tum-vision/lsd_slam#313-camera-calibration
