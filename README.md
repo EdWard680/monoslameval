@@ -46,3 +46,6 @@ roslaunch test_dataset.launch dataset:=<dataset folder> algorithm:=<algorithm la
 
 This should work out of the box for the datasets we produced with the M-Bot, however to run on another dataset, you can specify `dataset_image_topic` to set the image topic which is produced by your bag file. If the topic is of the raw image already, also set `decompress:=false`.
 
+This will launch rqt_bag on the bag file. Right-click the camera topic (`/camera/compressed` for the M-Bot datasets) and check the box that says 'publish'. Then you can hit play and you should see the image appear in the viewer window for the algorithm you're running.
+
+Note for ORB_SLAM2, for some reason the window doesn't resize properly. Just close the image viewer window on ORB_SLAM2 and it will re-open
