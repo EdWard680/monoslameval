@@ -87,20 +87,23 @@ This will launch rqt_bag on the bag file. Right-click the camera topic (`/camera
 Note for ORB_SLAM2, for some reason the window doesn't resize properly. Just close the image viewer window on ORB_SLAM2 and it will re-open
 
 ### LSD-slam running instructions
-#### Everytime you need to run LSD-slam with a new window, make sure you correctly:
+#### 1. Everytime you need to run LSD-slam with a new window, make sure you correctly enter in the terminal:
 ```
 source ~/rosbuild_ws/setup.bash
 ```
-#### Locate under the folder 'monoslameval'.
+#### 2. Locate under the folder 'monoslameval'
 
-#### Open the terminal and give the execution ability to the .sh file
+#### 3. Open the terminal and give the execution ability to the .sh file
 ```
 sudo chmod u+x lsd_slam.sh
 ```
 
-#### Run the following command to get all pre-programs running:
+#### 4. Run the following command to get all pre-programs running:
 ```
 ./lsd_slam.sh
 ```
 
-#### Run the dataset using just set the 'algorithm:=external.launch'.
+#### 5. Run the dataset using just set the 'algorithm:=external.launch'
+
+#### Everytime you want to change to run a different dataset, make sure the calibration file 'camera.cfg' is correctly selected.
+#### Refer link: https://github.com/tum-vision/lsd_slam#313-camera-calibration
