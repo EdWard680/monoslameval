@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="dataset" default="morning" doc="folder containing the dataset" />
+    <arg name="algorithm" default="orbslam2.launch" doc="launch file for the chosen algorithm" />
+    <arg name="decompress" default="true" />
+    <arg name="dataset_image_topic" default="/camera/compressed" />
+    
+    <include file="$(arg algorithm)" >
+        <arg name="workdir" value="$(arg dataset)" />
+    </include>
+    
+    <node name="republish" pkg="image_transport" type="republish" args="compressed in:=/camera raw out:=/camera/image_raw" if="$(arg decompress)"/>
+    
+    <node name="rqt_bag" pkg="rqt_bag" type="rqt_bag" args="$(env PWD)/$(arg dataset)/dataset.bag">
+        <remap from="$(arg dataset_image_topic)" to="/camera/compressed" if="$(arg decompress)" />
+        <remap from="$(arg dataset_image_topic)" to="/camera/image_raw" unless="$(arg decompress)" />
+    </node>
+</launch>

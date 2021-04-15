@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="workdir" default="." />
+    
+    <node name="orbslam2" pkg="ORB_SLAM2" type="Mono" args="$(find ORB_SLAM2)/../../../Vocabulary/ORBvoc.txt $(env PWD)/$(arg workdir)/orbslam2.yaml" output="screen">
+        
+    </node>
+</launch>
