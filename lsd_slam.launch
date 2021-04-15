@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="workdir" default="." />
+    
+    <node name="viewer" pkg="lsd_slam_viewer" type="viewer" />
+    <node name="lsd_core" pkg="lsd_slam_core" type="live_slam" args="/image:=/camera/image_raw _calib:=$(env PWD)/$(arg workdir)/camera.cfg" output="screen"/>
+    
+</launch>
