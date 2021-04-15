@@ -31,9 +31,49 @@ in the ORB_SLAM2 folder as it says. Note that there seems to be a bug on some sy
 ```
 to the top of `include/System.h` in the ORB_SLAM2 directory.
 
-### lsd_slam
+### LSD-SLAM: Large-Scale Direct Monocular SLAM
 
 Note that lsd_slam depends on very outdated versions of Ubuntu and ROS, and can't really run on the same system as ORB_SLAM2.
+
+## Installation
+# ROS fuerte + Ubuntu 12.04
+Install system dependencies:
+
+    sudo apt-get install ros-fuerte-libg2o liblapack-dev libblas-dev freeglut3-dev libqglviewer-qt4-dev libsuitesparse-dev libx11-dev
+
+In your ROS package path, clone the repository:
+
+    git clone https://github.com/tum-vision/lsd_slam.git lsd_slam
+
+Compile the two package by typing:
+
+    rosmake lsd_slam
+
+# ROS indigo + Ubuntu 14.04
+**Not using catkin, however fortunately old-fashioned CMake-builds are still possible with ROS indigo.**
+For this you need to create a rosbuild workspace (if you don't have one yet), using:
+
+    sudo apt-get install python-rosinstall
+    mkdir ~/rosbuild_ws
+    cd ~/rosbuild_ws
+    rosws init . /opt/ros/indigo
+    mkdir package_dir
+    rosws set ~/rosbuild_ws/package_dir -t .
+    echo "source ~/rosbuild_ws/setup.bash" >> ~/.bashrc
+    bash
+    cd package_dir
+
+Install system dependencies:
+
+    sudo apt-get install ros-indigo-libg2o ros-indigo-cv-bridge liblapack-dev libblas-dev freeglut3-dev libqglviewer-dev libsuitesparse-dev libx11-dev
+
+In your ROS package path, clone the repository:
+
+    git clone https://github.com/tum-vision/lsd_slam.git lsd_slam
+
+Compile the two package by typing:
+
+    rosmake lsd_slam
 
 ## Running the datasets with the algorithms
 
