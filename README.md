@@ -41,9 +41,7 @@ Install system dependencies:
 
     sudo apt-get install ros-fuerte-libg2o liblapack-dev libblas-dev freeglut3-dev libqglviewer-qt4-dev libsuitesparse-dev libx11-dev
 
-In your ROS package path, clone the repository:
-
-    git clone https://github.com/tum-vision/lsd_slam.git lsd_slam
+Find your ROS package path, copy the 'lsd_slam' folder to your ROS package path.
 
 Compile the two package by typing:
 
@@ -67,9 +65,7 @@ Install system dependencies:
 
     sudo apt-get install ros-indigo-libg2o ros-indigo-cv-bridge liblapack-dev libblas-dev freeglut3-dev libqglviewer-dev libsuitesparse-dev libx11-dev
 
-In your ROS package path, clone the repository:
-
-    git clone https://github.com/tum-vision/lsd_slam.git lsd_slam
+Find your ROS package path, copy the 'lsd_slam' folder under your ROS package path.
 
 Compile the two package by typing:
 
@@ -89,3 +85,10 @@ This should work out of the box for the datasets we produced with the M-Bot, how
 This will launch rqt_bag on the bag file. Right-click the camera topic (`/camera/compressed` for the M-Bot datasets) and check the box that says 'publish'. Then you can hit play and you should see the image appear in the viewer window for the algorithm you're running.
 
 Note for ORB_SLAM2, for some reason the window doesn't resize properly. Just close the image viewer window on ORB_SLAM2 and it will re-open
+
+### LSD-slam running instructions
+## Everytime you need to run LSD-slam with a new window, make sure you correctly:
+```
+source ~/rosbuild_ws/setup.bash
+```
+##
