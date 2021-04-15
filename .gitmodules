@@ -4,3 +4,6 @@
 [submodule "lsd_slam"]
 	path = lsd_slam
 	url = https://github.com/tum-vision/lsd_slam
+[submodule "rpg_trajectory_evaluation"]
+	path = rpg_trajectory_evaluation
+	url = https://github.com/uzh-rpg/rpg_trajectory_evaluation.git
