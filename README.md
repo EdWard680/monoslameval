@@ -18,7 +18,7 @@ These folders also contain the requisite calibration files for each of the algor
 
 Each sub-repo includes instructions for how to build their code which you should follow to build and/or install their code.
 
-### ORB_SLAM2
+### `ORB_SLAM2`
 
 To build this you should just need to run
 ```
@@ -125,6 +125,8 @@ sudo chmod u+x lsd_slam.sh
 
 A useful tool called `rpg_trajectory_evaluation` is included with this repository. This tool is useful for comparing estimated and ground truth trajectories for the purposes of plotting.
 
+To get groundtruth trajectories from our M-Bot datasets, use the `bag_to_pose.py` script included in this package. The topic you'll want to convert is the `slam_pose` topic.
+
 ## ORB_SLAM2
 
 After running ORB_SLAM2 it will save the estimated trajectory to a weird location on your computer. To copy it here, run the provided script
@@ -141,3 +143,7 @@ This will generate some analyses and plots in that dataset folder which you can 
 
 ## LSD_SLAM
 See the folder: `lsd_plotter` for instructions on extracting and comparing the data for lsd_slam
+
+# Creating your own datasets from the M-Bot
+
+See the `lcm_to_ros` folder for details about this
